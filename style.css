@@ -9,6 +9,7 @@
 
 *, *::before, *::after {
     box-sizing: border-box;
+    transition: all .3s ease-in-out;
 }
 
 body, p {
@@ -79,6 +80,10 @@ picture {
 
 .btn:hover {
     box-shadow: 0 0 30px var(--clr-neonGreen);
+}
+
+.btn:hover > img {
+    transform: rotate(45deg);
 }
 
 @media (max-width:540px) {
