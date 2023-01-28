@@ -83,7 +83,11 @@ picture {
 }
 
 .btn:hover > img {
-    transform: rotate(45deg);
+    transform: rotate(135deg);
+}
+
+.roll {
+    animation: roll .5s ease-in;
 }
 
 .fadeIn {
@@ -111,6 +115,11 @@ picture {
 }
 
 @keyframes fadeIn {
-    from {opacity: 0;}
+    from {opacity: .2;}
     to {opacity: 1;}
+  }
+
+  @keyframes roll {
+    from {transform: rotate(0);}
+    to {transform: rotate(360deg);}
   }
