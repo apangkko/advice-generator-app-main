@@ -7,8 +7,8 @@ const getAdvice = () => {
     })
     .then(response => response.json())
     .then(response => {
-        const adviceNo = document.querySelector(".adviceNo");
-        const adviceTxt = document.querySelector(".adviceTxt");
+        
+        article.classList.add("fadeIn");
 
         adviceNo.innerHTML = `Advice #${response.slip.id}`;
         adviceTxt.innerHTML = `&ldquo;${response.slip.advice}&rdquo;`;
@@ -18,6 +18,13 @@ const getAdvice = () => {
 
 getAdvice();
 
+const article = document.querySelector("article");
+const adviceNo = document.querySelector(".adviceNo");
+const adviceTxt = document.querySelector(".adviceTxt");
 const btn = document.querySelector(".btn");
 
-btn.addEventListener('click', getAdvice);
+btn.addEventListener('click', () => {
+    article.classList.remove("fadeIn");
+    getAdvice();
+
+});

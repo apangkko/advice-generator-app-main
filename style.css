@@ -86,6 +86,10 @@ picture {
     transform: rotate(45deg);
 }
 
+.fadeIn {
+    animation: fadeIn 1s ease-in-out;
+}
+
 @media (max-width:540px) {
     article {
         max-width: 345px;
@@ -105,3 +109,8 @@ picture {
         font-size: 1.4rem;
     }
 }
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
