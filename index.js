@@ -1,20 +1,13 @@
-const getAdvice = () => {
-    fetch('	https://api.adviceslip.com/advice', {
-        method: 'GET',
-        headers: {
-            'Accept': 'application/json',
-        },
-    })
-    .then(res => res.json())
-    .then(json => {
-        
-        article.classList.add("fadeIn");
+const getAdvice = async () => {
+    const res = await fetch('https://api.adviceslip.com/advice');
+    console.log(res);
+    const data = await res.json();
+
+    article.classList.add("fadeIn");
         dice.classList.remove("roll");
 
-        adviceNo.innerHTML = `Advice #${json.slip.id}`;
-        adviceTxt.innerHTML = `&ldquo;${json.slip.advice}&rdquo;`;
-        
-    })
+        adviceNo.querySelector('span').innerHTML = data.slip.id;
+        adviceTxt.querySelector('span').innerHTML = data.slip.advice;
 };
 
 getAdvice();
